@@ -165,7 +165,7 @@ class DataSet:
 
         dynamicsSalByYears = self.mean(salary)
         dynamicsSalByYearsForVac = self.mean(salaryByName)
-        dynamicsSalByCityDescOrder = self.mean(city)
+        dynamicsSalByCityDescOrder = self.mean(city)       # not mega abobus
         numVacByYearForVac = {}
 
         for y, s in city.items():

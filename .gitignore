@@ -3,6 +3,6 @@
 /path/to/vacancies.csv
 *.csv
 /**/uploadByYears
-!currency.csv
-!HHru_vacancies.csv
-!100_vac.csv
+!/3.3/currency.csv
+!/3.3/HHru_vacancies.csv
+!/3.3/100_vac.csv

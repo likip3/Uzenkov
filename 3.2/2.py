@@ -3,7 +3,7 @@ import cProfile
 import os
 import pandas
 
-list_print1 = ['Динамика уровня зарплат по годам: ', 'Динамика количества вакансий по годам: ',
+headersRU = ['Динамика уровня зарплат по годам: ', 'Динамика количества вакансий по годам: ',
                'Динамика уровня зарплат по годам для выбранной профессии: ',
                'Динамика количества вакансий по годам для выбранной профессии: ',
                'Уровень зарплат по городам (в порядке убывания): ', 'Доля вакансий по городам (в порядке убывания): ']
@@ -13,7 +13,7 @@ class Multiproc:
 
     def __init__(self, path, vacancyName):
         self.path = path
-        self.name_vacancy = vacancyName
+        self.vacancyName = vacancyName
         self.salByYear = {}
         self.vacByYear = {}
         self.salByYearForVac = {}
@@ -26,7 +26,7 @@ class Multiproc:
         df = pandas.read_csv(file_csv)
         df["salary"] = df[["salary_from", "salary_to"]].mean(axis=1)
         df["published_at"] = df["published_at"].apply(lambda s: int(s[:4]))
-        info_of_file_vacancy = df[df["name"].str.contains(self.name_vacancy)]
+        info_of_file_vacancy = df[df["name"].str.contains(self.vacancyName)]
 
         return df["published_at"].values[0], [int(df["salary"].mean()), len(df),
                                               int(info_of_file_vacancy["salary"].mean() if len(

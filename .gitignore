@@ -2,3 +2,4 @@
 /venv
 /path/to/vacancies.csv
 *.csv
+/3.2/uploadByYears

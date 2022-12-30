@@ -2,4 +2,7 @@
 /venv
 /path/to/vacancies.csv
 *.csv
-/3.2/uploadByYears
+/**/uploadByYears
+!currency.csv
+!HHru_vacancies.csv
+!100_vac.csv
